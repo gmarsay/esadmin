@@ -9,7 +9,7 @@
           <input class="form-control" type="text" id="editor-form-path" name="editor-form-path" placeholder="path (eg: indexName/_search)">
         </div>
         <div class="col-sm-2">
-          <select class="form-control" id="editor-form-method" name="editor-form-method"">
+          <select class="form-control" id="editor-form-method" name="editor-form-method">
             <option value="GET">GET</option>
             <option value="POST">POST</option>
             <option value="PUT">PUT</option>
