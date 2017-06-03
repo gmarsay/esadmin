@@ -1,4 +1,4 @@
-# ES Admin
+![](https://github.com/gmarsay/esadmin/blob/master/help/logo_nb.png)
 
 _This webapp is currently under development._
 
