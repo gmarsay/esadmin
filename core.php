@@ -5,12 +5,14 @@ if (!$_SESSION['is_registred']) {
   header('location:login.php');
 }
 
-$login = $_SESSION['login'];
-$password = $_SESSION['password'];
-$host = $_SESSION['host'];
-$port = $_SESSION['port'];
+$context->elasticsearch = new stdClass();
+$context->elasticsearch->login = $_SESSION['login'];
+$context->elasticsearch->password = $_SESSION['password'];
+$context->elasticsearch->host = $_SESSION['host'];
+$context->elasticsearch->port = $_SESSION['port'];
 
-$es_url = 'http://'.$login.':'.$password.'@'.$host.':'.$port.'/';
+$es_url = 'http://'.$context->elasticsearch->login.':'.$context->elasticsearch->password.'@'.$context->elasticsearch->host.':'.$context->elasticsearch->port.'/';
+$context->elasticsearch->baseurl = $es_url;
 
 $es_all = $es_url.'_all';
 $data_all = file_get_contents($es_all);

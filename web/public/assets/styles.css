@@ -29,6 +29,7 @@ pre {
 footer {
   position: fixed;
   bottom: 0;
+  z-index: 10;
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 50px;

@@ -1,0 +1,51 @@
+#debug {
+  position: fixed;
+  bottom: 60px;
+  height: 250px;
+  width: 100%;
+  overflow: scroll;
+  background: #fff;
+  border-top: solid 2px #aaa;
+  font-size: 12px;
+}
+
+#debug ul {
+  position: fixed;
+  bottom: 50px;
+  width: 100%;
+  background: #dddddd;
+  border-top: solid 1px #aaa;
+  border-bottom: solid 1px #aaa;
+}
+
+#debug ul li {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+#debug ul li a{
+  padding: 2px 10px 2px 10px;
+  color: #333;
+}
+
+#debug h3 {
+  font-size: 12px;
+  text-transform: uppercase;
+  margin: -5px -5px 10px -5px;
+  padding: 5px;
+  background: #eee;
+  border-bottom: solid 1px #ccc;
+}
+
+#debug h3:before {
+  content: "> ";
+}
+
+#debug h4 {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#debug .debug-tab {
+  padding: 5px;
+}
