@@ -6,5 +6,5 @@
 </ul>
 
 <div class="page-content">
-  <?php include 'partials/page-'.$_GET['p'].'.php'; ?>
+  <?php include __DIR__.'/page-'.$_GET['p'].'.php'; ?>
 </div>

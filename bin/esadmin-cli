@@ -1,0 +1,22 @@
+#!/usr/bin/env php
+<?php
+
+use Symfony\Component\Console\Application;
+
+require __DIR__.'/../vendor/autoload.php';
+$version = file_get_contents(__DIR__.'/../VERSION');
+
+$application = new Application('ES Admin CLI', $version);
+
+foreach (scandir(__DIR__.'/../src/console') as $command) {
+  if (substr($command, -11, 11) == 'Command.php') {
+    require __DIR__.'/../src/console/'.$command;
+
+    $class_name = substr($command, 0, -4);
+    $class_name = 'EsAdmin\Command\\'.$class_name;
+
+    $application->add(new $class_name());
+  }
+}
+
+$application->run();

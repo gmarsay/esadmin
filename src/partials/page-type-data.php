@@ -203,12 +203,14 @@ function es_delete_by_id(id) {
 */
     data: {},
   })
-  .success(function(data) {
-    $('tr[data-id="'+id+'"]').hide();
-  })
-  .fail(function(data, status, error) {
-    $('tr[data-id="'+id+'"] td').addClass('text-danger');
-    console.log('Request error.');
+  .done(function(data, status) {
+    if (status == 'success') {
+      $('tr[data-id="'+id+'"]').hide();
+    }
+    else {
+      $('tr[data-id="'+id+'"] td').addClass('text-danger');
+      console.log('Request error.');
+    }
   });
 }
 </script>

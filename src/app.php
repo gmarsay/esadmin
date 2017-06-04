@@ -1,14 +1,14 @@
-<?php include 'core.php'; ?>
+<?php include '../core.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
   <title>ES Admin</title>
-  <link href="vendor/components/bootstrap/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link href="vendor/components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="assets/styles.css" rel="stylesheet">
-  <script src="vendor/components/jquery/jquery.min.js"></script>
-  <script src="vendor/components/bootstrap/js/bootstrap.min.js"></script>
-  <script src="assets/app.js"></script>
+  <link href="public/bootstrap/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="public/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="public/assets/styles.css" rel="stylesheet">
+  <script src="public/jquery/jquery.min.js"></script>
+  <script src="public/bootstrap/js/bootstrap.min.js"></script>
+  <script src="public/assets/app.js"></script>
 </head>
 <body>
 <div class="container-fluid">
@@ -83,7 +83,7 @@
 <footer class="footer">
   <div class="container-fluid">
     <div>
-      ELASTICSEARCH ADMIN <?=file_get_contents('VERSION');?>
+      ELASTICSEARCH ADMIN <?=file_get_contents('../VERSION');?>
       <div class="pull-right">
         <ul>
           <li>Github</li>

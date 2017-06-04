@@ -1,9 +1,13 @@
 {
+    "name": "gmarsay/esadmin",
+    "description": "Elasticsearch Admin",
     "require": {
         "erusev/parsedown": "^1.6",
         "fortawesome/font-awesome": "^4.7",
         "components/jquery": "^3.2",
         "components/bootstrap": "^3.3",
-        "components/font-awesome": "^4.7"
+        "components/font-awesome": "^4.7",
+        "symfony/console": "^3.3",
+        "symfony/debug": "^3.3"
     }
 }

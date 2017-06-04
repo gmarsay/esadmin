@@ -56,7 +56,7 @@ function url($new_params = array(), $delete_params = array()) {
 
 
 if (isset($_GET['api'])) {
-  include $_GET['api'].'.php';
+  include 'src/'.$_GET['api'].'.php';
   exit;
 }
 

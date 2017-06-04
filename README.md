@@ -1,4 +1,4 @@
-![](https://github.com/gmarsay/esadmin/blob/master/help/logo_nb.png)
+![](https://github.com/gmarsay/esadmin/blob/master/web/public/help/logo_nb.png)
 
 _This webapp is currently under development._
 
