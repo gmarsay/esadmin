@@ -8,6 +8,8 @@
         "components/bootstrap": "^3.3",
         "components/font-awesome": "^4.7",
         "symfony/console": "^3.3",
-        "symfony/debug": "^3.3"
+        "symfony/debug": "^3.3",
+        "league/route": "^3.0",
+        "zendframework/zend-diactoros": "^1.4"
     }
 }

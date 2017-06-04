@@ -5,7 +5,7 @@ if (!$_SESSION['is_registred']) {
   header('location:login.php');
 }
 
-$context->elasticsearch = new stdClass();
+$context->elasticsearch = (object) array();
 $context->elasticsearch->login = $_SESSION['login'];
 $context->elasticsearch->password = $_SESSION['password'];
 $context->elasticsearch->host = $_SESSION['host'];
@@ -58,7 +58,7 @@ function url($new_params = array(), $delete_params = array()) {
 
 
 if (isset($_GET['api'])) {
-  include 'src/'.$_GET['api'].'.php';
+  include 'src/views/'.$_GET['api'].'.php';
   exit;
 }
 

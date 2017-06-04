@@ -9,7 +9,7 @@ $(document).ready(function() {
 
 function update_header_left(refresh=2000) {
   $.get(
-    'api.php?api=partials/header-stats',
+    '/api/?api=partials/header-stats',
     function success(data) {
       $('#header-info').html(data);
     }

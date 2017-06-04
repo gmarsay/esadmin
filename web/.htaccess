@@ -1,0 +1,11 @@
+RewriteEngine On
+
+#RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^esadmin/ index.php [QSA,L]
+RewriteRule ^esadmin_dev/ index_dev.php [QSA,L]
+
+RewriteRule ^api/ api.php [QSA,L]
