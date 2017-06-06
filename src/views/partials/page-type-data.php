@@ -103,7 +103,7 @@ $query_max_row = $_data->hits->total;
 <div class="query_filter" style="width: 50%;">
   <h3>Filters</h3>
   <p class="text-muted">Use wildcard "*" for any characters or "?" for single character.</p>
-  <form action="index.php<?=url()?>" method="GET" class="form-horizontal">
+  <form action="<?=url()?>" method="GET" class="form-horizontal">
     <?php foreach ($_GET as $k=>$v): ?>
       <?php if (is_array($v)): ?>
         <?php foreach ($v as $subkey=>$subvalue): ?>

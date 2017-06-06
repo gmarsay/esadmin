@@ -1,10 +1,7 @@
 <?php
-session_start();
 
-if (!$_SESSION['is_registred']) {
-  header('location:login.php');
-}
-
+$context = (object) array();
+$context->env = 'dev';
 $context->elasticsearch = (object) array();
 $context->elasticsearch->login = $_SESSION['login'];
 $context->elasticsearch->password = $_SESSION['password'];

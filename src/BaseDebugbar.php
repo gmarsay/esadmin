@@ -1,6 +1,8 @@
 <?php
 
-class debugbar {
+namespace EsAdmin\Core;
+
+class BaseDebugbar {
 
   protected $log = array();
   protected $time = array();
@@ -8,12 +10,8 @@ class debugbar {
   protected $request = array();
   protected $elasticsearch = array();
 
-  protected function __construct() {
-
-  }
-
   public function addLog($level, $message) {
-
+    $this->log[] = array(time(), $level, $message);
   }
 
   public function addTime($message, $start, $end=0) {
@@ -33,7 +31,7 @@ class debugbar {
   }
 
   public function renderLog() {
-    echo 'Not implemented';
+    var_dump($this->log);
   }
 
   public function renderTime() {

@@ -2,6 +2,7 @@
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use EsAdmin\Core\BaseController;
 
 $container = new League\Container\Container;
 
@@ -18,25 +19,34 @@ $route = new League\Route\RouteCollection($container);
 
 
 /* Temporary rules */
-$route->map('GET', '/esadmin_dev/', function (ServerRequestInterface $request, ResponseInterface $response) {
+$route->map('GET', '/{env}/', function (ServerRequestInterface $request, ResponseInterface $response) {
   return $response;
 });
 /****/
 
-$route->map('GET', '/esadmin_dev/{_controller}/{_action}', function (ServerRequestInterface $request, ResponseInterface $response, array $args) {
-    $_controller = $args['_controller'].'Controller';
-    $_controller = new $_controller();
+$route->map('GET', '/{env}/{_controller}/{_action}', function (ServerRequestInterface $request, ResponseInterface $response, array $args) {
+    $_controller = $args['_controller'];
+    $_action = $args['_action'];
 
-    $_action = $args['_action'].'Action';
-    return $_controller->$_action($request, $response, $args);
+    $controller = $_controller.'Controller';
+    $action = $_action.'Action';
+
+    $baseController = new EsAdmin\Core\BaseController;
+
+    return $baseController->$action($_controller, $_action, $request, $response, $args);
 });
 
-$route->map('GET', '/esadmin_dev/{_controller}', function (ServerRequestInterface $request, ResponseInterface $response, array $args) {
-    $_controller = $args['_controller'].'Controller';
-    $_controller = new $_controller();
 
-    $_action = 'indexAction';
-    return $_controller->$_action($request, $response, $args);
+$route->map('GET', '/{env}/{_controller}', function (ServerRequestInterface $request, ResponseInterface $response, array $args) {
+    $_controller = $args['_controller'];
+    $_action = 'index';
+
+    $controller = $_controller.'Controller';
+    $action = $_action.'Action';
+
+    $baseController = new EsAdmin\Core\BaseController;
+
+    return $baseController->$action($_controller, $_action, $request, $response, $args);
 });
 
 

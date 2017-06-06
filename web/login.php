@@ -1,6 +1,8 @@
 <?php
+session_start();
+
 if (isset($_GET['logout'])) {
-  @session_destroy();
+  session_destroy();
 }
 
 if (isset($_POST['login']) && isset($_POST['password']) && isset($_POST['host'])) {
@@ -25,7 +27,7 @@ if (isset($_POST['login']) && isset($_POST['password']) && isset($_POST['host'])
     $_SESSION['host'] = $_POST['host'];
     $_SESSION['port'] = $_POST['port'];
 
-    header('location:index.php');
+    header('location:/esadmin/');
   }
   else {
     $error = true;
@@ -57,7 +59,7 @@ if (isset($_POST['login']) && isset($_POST['password']) && isset($_POST['host'])
         <div class="alert alert-danger" style="margin-top: 30px;">Authentication error.</div>
       <?php endif; ?>
 
-      <form action="login.php" method="POST" class="form-horizontal" style="margin-top: 30px;">
+      <form action="/login" method="POST" class="form-horizontal" style="margin-top: 30px;">
         <div class="form-group">
           <div class="col-sm-offset-1 col-sm-10">
             <input type="text" class="form-control" name="login" id="login" placeholder="Login (can be empty)">

@@ -8,4 +8,6 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^esadmin/ index.php [QSA,L]
 RewriteRule ^esadmin_dev/ index_dev.php [QSA,L]
 
+RewriteRule ^login$ login.php [QSA,L]
+RewriteRule ^logout$ login.php?logout=true [QSA,L]
 RewriteRule ^api/ api.php [QSA,L]

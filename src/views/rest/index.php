@@ -1,3 +1,7 @@
+<?php $this->layout('../layout', [
+  'title' => 'User Profile'
+]) ?>
+
 <h2>Administration <span class="text-muted">/</span> REST API</h2>
 
 

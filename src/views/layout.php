@@ -1,4 +1,6 @@
-<?php include '../core.php'; ?>
+<?php
+include __DIR__.'/../../core.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +17,15 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
-      <?php include '_header.php'; ?>
+      <?php $this->insert('../_header', [
+        'es_cluster_name' => $data_stats->cluster_name,
+        'es_total_nodes' => $data_stats->_nodes->total,
+        'es_total_indices' => $data_stats->indices->count,
+        'es_total_shards' => $data_stats->indices->shards->total,
+        'es_total_docs' => number_format($data_stats->indices->docs->count, 0, ',', ' '),
+        'es_total_size' => round($data_stats->indices->store->size_in_bytes/1024/1024/1024, 2),
+        'es_status' => $data_stats->status
+      ]) ?>
     </div>
   </div>
 
@@ -31,9 +41,8 @@
           <?php include 'partials/content-info-index.php'; ?>
         <?php elseif (isset($_GET['admin'])): ?>
           <?php include 'partials/admin-'.$_GET['admin'].'.php'; ?>
-        <?php else: ?>
-          <h2>Welcome to ES Admin !</h2>
         <?php endif; ?>
+        <?=$this->section('content')?>
       </div>
     </div>
   </div>

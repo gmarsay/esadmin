@@ -8,43 +8,53 @@
     <li id="debug-elasticsearch-link" class="debug-tab-link"><a href="javascript:void(0);" onclick="debug_navigation('elasticsearch');">Elasticsearch</a></li>
   </ul>
 
-  <div id="debug-log" class="debug-tab">
+  <div id="debug-log" class="debug-tab" style="display: none;">
     <h3>Log</h3>
-    <i>Not implemented</i>
+    <div>
+      <i>Not implemented</i>
+    </div>
   </div>
 
   <div id="debug-time" class="debug-tab" style="display: none;">
     <h3>Time</h3>
-    <i>Not implemented</i>
+      <div>
+      <i>Not implemented</i>
+    </div>
   </div>
 
   <div id="debug-context" class="debug-tab" style="display: none;">
     <h3>Context</h3>
-    <?php var_dump($context); ?>
+    <div>
+      <?php var_dump($context); ?>
+    </div>
   </div>
 
   <div id="debug-request" class="debug-tab" style="display: none;">
     <h3>Request</h3>
+    <div>
 
-    <h4>GET</h4>
-    <?php var_dump($_GET); ?>
+      <h4>GET</h4>
+      <?php var_dump($_GET); ?>
 
-    <h4>POST</h4>
-    <?php var_dump($_POST); ?>
+      <h4>POST</h4>
+      <?php var_dump($_POST); ?>
 
-    <h4>SESSION</h4>
-    <?php var_dump($_SESSION); ?>
+      <h4>SESSION</h4>
+      <?php var_dump($_SESSION); ?>
 
-    <h4>COOKIE</h4>
-    <?php var_dump($_COOKIE); ?>
+      <h4>COOKIE</h4>
+      <?php var_dump($_COOKIE); ?>
 
-    <h4>SERVER</h4>
-    <?php var_dump($_SERVER); ?>
+      <h4>SERVER</h4>
+      <?php var_dump($_SERVER); ?>
+    </div>
   </div>
 
   <div id="debug-elasticsearch" class="debug-tab" style="display: none;">
     <h3>Elasticsearch</h3>
-    <i>Not implemented</i>
+    <div>
+      <i>Not implemented</i>
+    </div>
   </div>
 </div>
 
