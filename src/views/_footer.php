@@ -1,4 +1,5 @@
-<?php if ($context->env == 'dev'): ?>
+<?php if ($context->get('env') == 'dev'): ?>
+
 <div id="debug">
   <ul class="nav nav-tabs">
     <li id="debug-log-link" class="debug-tab-link"><a href="javascript:void(0);" onclick="debug_navigation('log');">Log</a></li>
@@ -11,13 +12,13 @@
   <div id="debug-log" class="debug-tab" style="display: none;">
     <h3>Log</h3>
     <div>
-      <i>Not implemented</i>
+        <?=$debug->renderLog()?>
     </div>
   </div>
 
   <div id="debug-time" class="debug-tab" style="display: none;">
     <h3>Time</h3>
-      <div>
+    <div>
       <i>Not implemented</i>
     </div>
   </div>

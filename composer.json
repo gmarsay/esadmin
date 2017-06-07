@@ -11,6 +11,7 @@
         "symfony/debug": "^3.3",
         "league/route": "^3.0",
         "zendframework/zend-diactoros": "^1.4",
-        "league/plates": "^3.3"
+        "league/plates": "^3.3",
+        "elasticsearch/elasticsearch": "^5.2"
     }
 }

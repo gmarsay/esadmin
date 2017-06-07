@@ -11,7 +11,8 @@ class BaseDebugbar {
   protected $elasticsearch = array();
 
   public function addLog($level, $message) {
-    $this->log[] = array(time(), $level, $message);
+    $this->log[] = array(microtime(true), $level, $message);
+usleep(1000);
   }
 
   public function addTime($message, $start, $end=0) {
@@ -31,7 +32,20 @@ class BaseDebugbar {
   }
 
   public function renderLog() {
-    var_dump($this->log);
+    $response = '';
+
+    foreach ($this->log as $log) {
+      if (isset($last_time)) {
+        $time = $log[0] - $last_time;
+      }
+      else {
+        $time = 0;
+      }
+      $response.= '<p><span>'.$log[1].'</span> - '.$log[2].' <i>(microtime : '.$log[0].')</i></p>';
+      $last_time = $log[0];
+    }
+
+    return $response;
   }
 
   public function renderTime() {

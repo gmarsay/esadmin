@@ -29,7 +29,7 @@
     <h3>Administration</h3>
     <div class="nav-list-administration">
       <ul>
-        <li <?php if (isset($_GET['admin']) && $_GET['admin'] == 'cluster'): ?>class="active"<?php endif; ?>><a href="?admin=cluster"><i class=" fa fa-server"></i> Cluster</a></li>
+        <li <?php if (isset($_GET['admin']) && $_GET['admin'] == 'cluster'): ?>class="active"<?php endif; ?>><a href="/esadmin_dev/cluster"><i class=" fa fa-server"></i> Cluster</a></li>
         <li <?php if (isset($_GET['admin']) && $_GET['admin'] == 'rest-api'): ?>class="active"<?php endif; ?>><a href="/esadmin_dev/rest"><i class=" fa fa-puzzle-piece"></i> REST API</a></li>
         <li <?php if (isset($_GET['admin']) && $_GET['admin'] == 'acl'): ?>class="active"<?php endif; ?>><a href="#"><i class=" fa fa-key"></i> Security / ACL</a></li>
         <li><a href="/logout"><i class=" fa fa-sign-out"></i> Logout</a></li>

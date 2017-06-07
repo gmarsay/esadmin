@@ -1,5 +1,7 @@
 <?php
-include __DIR__.'/../../core.php';
+//include __DIR__.'/../../core.php';
+include __DIR__.'/../core.php';
+include __DIR__.'/../functions.php';
 ?>
 <!DOCTYPE html>
 <html>
